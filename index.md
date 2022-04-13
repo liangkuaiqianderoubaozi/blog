@@ -2,7 +2,7 @@
 layout: home
 ---
 
-Make Jelly site have a GitBook look!
+知识使人快乐
 
 ## Demo
 
