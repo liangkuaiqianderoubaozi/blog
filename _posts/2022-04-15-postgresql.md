@@ -55,7 +55,7 @@ alter user postgres with password '123456';
 
 ![img_5.png](img_5.png)
 
-- 使用另一个命令，切换到这个用户，然后修改密码，就可以了
+- 使用另一个命令，切换到这个用户，然后修改密码，就可以了，记得打开日志，留一个操作说明
 ~~~
 \c postgres //切换数据库
 \c - root_sys //切换到superuser用户
