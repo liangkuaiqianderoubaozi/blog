@@ -1,12 +1,12 @@
 ---
-title: postgresql
+title: 数据库
 author: roubaozi
 date: 2022-04-15
 category: Jekyll
 layout: post
 ---
 
-连接数据库密码认证错误, 修改密码，superuser问题
+postgresql-无法修改数据库密码问题
 -------------
 检查数据库运行状态，检查数据库是否正常运行，正常运行状态，但是连接不上
 ~~~
