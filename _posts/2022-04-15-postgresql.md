@@ -38,9 +38,8 @@ psql -U postgres
 ~~~
 alter user postgres with password '123456';
 ~~~
-不行的往下看
-  ![img_3.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/2022-04-15-postgresql/img_3.png)
-执行下面的sql，要在保持无密码的情况下执行。可以看到他有一列是usersuper，发现root_sys是有的
+![img_3.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/2022-04-15-postgresql/img_3.png)
+出现上面问题的话。执行下面的sql，切换到有权限的用户上面，然后修改密码，usersuper是true的
 ~~~
  select * from pg_shadow;
 ~~~
