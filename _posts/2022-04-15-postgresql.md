@@ -6,7 +6,7 @@ category: Jekyll
 layout: post
 ---
 
-postgresql系列-无法修改数据库密码问题
+postgresql-无法修改数据库密码问题
 -------------
 检查数据库运行状态，检查数据库是否正常运行，正常运行状态，但是连接不上
 ~~~
