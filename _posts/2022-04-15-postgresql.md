@@ -12,20 +12,20 @@ postgresql-无法修改数据库密码问题
 ~~~
 systemctl statuc postgresql-11
 ~~~
-![img.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/2022-04-15-postgresql/img.png)
+![img.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/postgresql/img.png)
 更改密码 ，postgress跳过密码认证，修改配置文件的认证方式
 ~~~
  find / -name pg_hba.conf
 ~~~
 找到对应目录之后，进行修改，有时可能存在多个，挨个修改重启数据库
-![img_1.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/2022-04-15-postgresql/img_1.png)
+![img_1.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/postgresql/img_1.png)
 
 ~~~
 vi /var/lib/pgsql/11/data/pg_hba.conf
 ~~~
 
 将里面的md5改成trust，然后重启数据库
-  ![img_2.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/2022-04-15-postgresql/img_2.png)
+  ![img_2.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/postgresql/img_2.png)
 
 ~~~
 systemctl restart postgresql-11
@@ -38,19 +38,19 @@ psql -U postgres
 ~~~
 alter user postgres with password '123456';
 ~~~
-![img_3.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/2022-04-15-postgresql/img_3.png)
+![img_3.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/postgresql/img_3.png)
 出现上面问题的话。执行下面的sql，切换到有权限的用户上面，然后修改密码，usersuper是true的
 ~~~
  select * from pg_shadow;
 ~~~
-![img_5.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/2022-04-15-postgresql/img_5.png)
+![img_5.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/postgresql/img_5.png)
 使用另一个命令，切换到这个用户，然后修改密码，就可以了，记得打开日志，留一个操作说明
 ~~~
 \c postgres //切换数据库
 \c - root_sys //切换到superuser用户
 ~~~
 执行上面的修改密码命令，成功，就可以了，记得把conf配置文件修改回去
-![img_6.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/2022-04-15-postgresql/img_6.png)
+![img_6.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/postgresql/img_6.png)
 
 
 
