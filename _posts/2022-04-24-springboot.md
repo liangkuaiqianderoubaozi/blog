@@ -12,7 +12,7 @@ layout: post
 ![0423.png](https://liangkuaiqianderoubaozi.github.io/blog/gitbook/resources/springboot/0423.png)
 
 springboot2.6.x禁止循环依赖，springboot降级到2.3.3版本，或者升级 pageHelper>=1.4.1.
-~~~
+~~~xml
    <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
